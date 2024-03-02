@@ -1,3 +1,9 @@
+#
+This is a fork of [react-phone-input-2]
+This fixes a few minor issues with the original package, since it seems to be slow to accept PRs.
+However, it's still the best phone input package I've found for React, unfortunately.
+
+
 # React-Phone-Input-2
 Highly customizable phone input component with auto formatting.
 
