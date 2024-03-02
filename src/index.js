@@ -617,9 +617,15 @@ class PhoneInput extends React.Component {
     const newSelectedCountry = this.state.onlyCountries.find(o => o == country);
     if (!newSelectedCountry) return;
 
-    const unformattedNumber = this.state.formattedNumber.replace(' ', '').replace('(', '').replace(')', '').replace('-', '');
-    const newNumber = unformattedNumber.length > 1 ? unformattedNumber.replace(currentSelectedCountry.dialCode, newSelectedCountry.dialCode) : newSelectedCountry.dialCode;
-    const formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), newSelectedCountry);
+    let newNumber = this.state.formattedNumber;
+    let formattedNumber = this.state.formattedNumber;
+
+    //If the country code is to be displayed, we need to update the number formatting when a new country is selected
+    if(!this.props.disableCountryCode){
+      const unformattedNumber = this.state.formattedNumber.replace(' ', '').replace('(', '').replace(')', '').replace('-', '');
+      newNumber = unformattedNumber.length > 1 ? unformattedNumber.replace(currentSelectedCountry.dialCode, newSelectedCountry.dialCode) : newSelectedCountry.dialCode;
+      formattedNumber = this.formatNumber(newNumber.replace(/\D/g, ''), newSelectedCountry);
+    }
 
     this.setState({
       showDropdown: false,
