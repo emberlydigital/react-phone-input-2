@@ -16,7 +16,7 @@
 // ['north-america', 'south-america', 'central-america', 'carribean',
 //  'eu-union', 'ex-ussr', 'ex-yugos', 'baltic', 'middle-east', 'north-africa']
 
-const rawCountries = [
+export const rawCountries = [
   [
     'Afghanistan',
     ['asia'],

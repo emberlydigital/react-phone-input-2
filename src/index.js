@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import './utils/prototypes'
 
 import CountryData from './CountryData.js';
+import rawCountries from './rawCountries.js';
 
 class PhoneInput extends React.Component {
   static propTypes = {
@@ -1019,3 +1020,4 @@ class PhoneInput extends React.Component {
 }
 
 export default PhoneInput;
+export { rawCountries };
