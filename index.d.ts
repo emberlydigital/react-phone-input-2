@@ -109,4 +109,5 @@ declare module "@emberly/react-phone-input-2" {
   }
   const PhoneInput: React.FC<PhoneInputProps>;
   export default PhoneInput;
+  export { rawCountries };
 }
