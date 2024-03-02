@@ -1,6 +1,6 @@
 {
   "name": "@emberly/react-phone-input-2",
-  "version": "2.15.4",
+  "version": "2.15.5",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
   "typings": "index.d.ts",
@@ -8,7 +8,7 @@
     "test": "jest",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider cross-env TARGET=dev_js NODE_ENV=development webpack-dev-server --progress",
     "start:css": "cross-env NODE_OPTIONS=--openssl-legacy-provider cross-env TARGET=dev_css NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run build:js && npm run build:css",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && npm run build:js && npm run build:css",
     "build:js": "cross-env NODE_OPTIONS=--openssl-legacy-provider TARGET=build_js NODE_ENV=production webpack -p --progress",
     "build:css": "cross-env NODE_OPTIONS=--openssl-legacy-provider TARGET=build_css NODE_ENV=production webpack -p --progress && rimraf ./main.js",
     "prepublishOnly": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run build",
