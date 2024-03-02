@@ -1,5 +1,5 @@
 {
-  "name": "react-phone-input-2",
+  "name": "@emberly/react-phone-input-2",
   "version": "2.15.1",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
@@ -8,7 +8,7 @@
     "test": "jest",
     "start": "cross-env cross-env TARGET=dev_js NODE_ENV=development webpack-dev-server --progress",
     "start:css": "cross-env TARGET=dev_css NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env export SET NODE_OPTIONS=--openssl-legacy-provider && npm run build:js && npm run build:css",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.js",
     "build:js": "cross-env TARGET=build_js NODE_ENV=production webpack -p --progress",
     "build:css": "cross-env TARGET=build_css NODE_ENV=production webpack -p --progress && rm ./main.js",
     "prepublishOnly": "npm run build",
@@ -92,5 +92,8 @@
     "lodash.reduce": "^4.6.0",
     "lodash.startswith": "^4.2.1",
     "prop-types": "^15.7.2"
+  },
+  "directories": {
+    "test": "test"
   }
 }
