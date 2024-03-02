@@ -62,6 +62,12 @@ class Demo extends React.Component {
             country='it'
             preferredCountries={['it', 'se']}
           />
+          <p>Disable Country Code</p>
+          <PhoneInput
+            country='us'
+            preferredCountries={['us']}
+            disableCountryCode={true}
+          />
         </div>
 
         <div style={{display: 'inline-block', marginLeft: '40px'}}>
