@@ -6,14 +6,14 @@
   "typings": "index.d.ts",
   "scripts": {
     "test": "jest",
-    "start": "cross-env cross-env TARGET=dev_js NODE_ENV=development webpack-dev-server --progress",
-    "start:css": "cross-env TARGET=dev_css NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.js",
-    "build:js": "cross-env TARGET=build_js NODE_ENV=production webpack -p --progress",
-    "build:css": "cross-env TARGET=build_css NODE_ENV=production webpack -p --progress && rm ./main.js",
-    "prepublishOnly": "npm run build",
-    "analyze": "cross-env TARGET=analyze NODE_ENV=production webpack -p --progress"
-  },
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider cross-env TARGET=dev_js NODE_ENV=development webpack-dev-server --progress",
+    "start:css": "cross-env NODE_OPTIONS=--openssl-legacy-provider cross-env TARGET=dev_css NODE_ENV=development webpack-dev-server --progress",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run build:js && npm run build:css",
+    "build:js": "cross-env NODE_OPTIONS=--openssl-legacy-provider TARGET=build_js NODE_ENV=production webpack -p --progress",
+    "build:css": "cross-env NODE_OPTIONS=--openssl-legacy-provider TARGET=build_css NODE_ENV=production webpack -p --progress && rimraf ./main.js",
+    "prepublishOnly": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run build",
+    "analyze": "cross-env NODE_OPTIONS=--openssl-legacy-provider TARGET=analyze NODE_ENV=production webpack -p --progress"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emberlydigital/react-phone-input-2"
@@ -73,6 +73,7 @@
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.6.5",
     "react-testing-library": "^6.0.4",
+    "rimraf": "^5.0.5",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.5",
